@@ -1,0 +1,70 @@
+0
+Orlando WashingtonDC 100
+WashingtonDC Orlando 200
+Orlando NewYorkCity 150
+NewYorkCity Orlando 150
+Orlando Daytona 4
+Daytona Orlando 4
+1
+Orlando WashingtonDC 100
+WashingtonDC Orlando 200
+Orlando NewYorkCity 150
+NewYorkCity Orlando 150
+Orlando Daytona 4
+Daytona Orlando 4
+2
+Orlando WashingtonDC 100
+WashingtonDC Orlando 200
+Orlando NewYorkCity 150
+NewYorkCity Orlando 150
+Orlando Daytona 4
+Daytona Orlando 4
+3
+Orlando WashingtonDC 100
+WashingtonDC Orlando 200
+Orlando NewYorkCity 150
+NewYorkCity Orlando 150
+Orlando Daytona 4
+Daytona Orlando 4
+4
+Orlando WashingtonDC 100
+WashingtonDC Orlando 200
+Orlando NewYorkCity 150
+NewYorkCity Orlando 150
+Orlando Daytona 4
+Daytona Orlando 4
+5
+Orlando WashingtonDC 100
+WashingtonDC Orlando 200
+Orlando NewYorkCity 150
+NewYorkCity Orlando 150
+Orlando Daytona 4
+Daytona Orlando 4
+6
+Orlando WashingtonDC 100
+WashingtonDC Orlando 200
+Orlando NewYorkCity 150
+NewYorkCity Orlando 150
+Orlando Daytona 4
+Daytona Orlando 4
+7
+Orlando WashingtonDC 100
+WashingtonDC Orlando 200
+Orlando NewYorkCity 150
+NewYorkCity Orlando 150
+Orlando Daytona 4
+Daytona Orlando 4
+8
+Orlando WashingtonDC 100
+WashingtonDC Orlando 200
+Orlando NewYorkCity 150
+NewYorkCity Orlando 150
+Orlando Daytona 4
+Daytona Orlando 4
+9
+Orlando WashingtonDC 100
+WashingtonDC Orlando 200
+Orlando NewYorkCity 150
+NewYorkCity Orlando 150
+Orlando Daytona 4
+Daytona Orlando 4

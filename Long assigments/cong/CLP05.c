@@ -5,36 +5,57 @@
 #include <stireg.h>
 #include <math.h>
 
-struct client
+struct Airl
 {
     char firstName[20];
     char lastName[20];
-    char deCity[400];
-    char frCity[400];
+    char deCity[100];
+    char frCity[100];
     int dayLeave;
     int dayback;
     int seats;
-} VietAirl[100];
+};
 
 void menu();
 int validattion(int min, int max);
 int main(int argc, char const *argv[])
 {
+//-----------------------------------------
+   char str2[20], str3[20];
+    int year;
+    FILE *fp;
     char filename[50];
-    printf("Enter the name of the file with the flight data");
-    scanf("%s", filename);
-    f = fopen(filename, "r");
-    if (f == NULL)
+    int days;  
+    int count = 0;
+    printf("Enter the name of the file with the flight data: ");
+    fflush(stdin);
+    gets(filename);
+    fp = fopen(filename, "r");
+    if (fp == NULL)
     {
         printf("Can't open file !!!\n");
         return 0;
     }
-    printf("File content: \n");
-    fread(filename, buffer, 1, f);
+    rewind(fp);
+    fscanf(fp,"%d",&days);
+    Airl VietAirl[days];
+    do
+    {
+        if (feof(fp))
+        {
+            break;
+        }
+        fscanf(fp, "%s %s %d",str2, str3, &year);
+
+    } while (1);
+    fclose(fp);
+//---------------------------------------------------------
     while (true)
     {
+        //---------------------------------
         int count = 0 menu();
         int chosse = validattion(1, 3);
+        //---------------------------------
         while (chosse)
         {
         case 1:
@@ -56,18 +77,17 @@ int main(int argc, char const *argv[])
             fflush(stdin);
             gets(VietAirl[count].deCity);
             prinf("What day do you want to leave?");
-            scanf("%d",VietAirl[count].dayLeave);
+            scanf("%d", VietAirl[count].dayLeave);
             printf("What day do you want to come back?");
-            scanf("%d",VietAirl[count].dayback);
+            scanf("%d", VietAirl[count].dayback);
             printf("How many seats do you want?");
-            scanf("%d",VietAirl[count].seats);
+            VietAirl[count].seats = validattion(4, 400);
             //---------------------------------------
             printf("Thank! Your reservation has been make.")
         }
         }
     }
-
-    fclose(f);
+    system("pause");
     return 0;
 }
 
@@ -91,19 +111,6 @@ int validattion(int min, int max)
 }
 void reservation()
 {
-    printf("What is your name, first followed by last?");
-    scanf();
-    printf("From which city do you want to fly?");
-    scanf();
-    printf("What is your destination city?");
-    scanf();
-    prinf("What day do you want to leave?");
-    scanf();
-    printf("What day do you want to come back?");
-    scanf();
-    printf("How many seats do you want?");
-    scanf();
-    printf("Thank! Your reservation has been make.")
 }
 void print(int count)
 {
