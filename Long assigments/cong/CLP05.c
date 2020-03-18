@@ -29,13 +29,13 @@ int main(int argc, char const *argv[])
     fflush(stdin);
     gets(filename);
     fp = fopen(filename, "r");
-    if (fp == NULL)
+    if (fp == NULL)//xet co ton tai gia tri file
     {
         printf("Can't open file !!!\n");
         system("pause");
         return 0;
     }
-    int count = 0;
+    int count = 0;//dem so hang trong file tru hang dau tien 
     rewind(fp);
     fscanf(fp, "%d", days);
     char buff[500];
@@ -43,11 +43,11 @@ int main(int argc, char const *argv[])
     {
         count++;
     }
-    Airl VAirl[count];
+    Airl VAirl[count];//tao mot day tam de lay thong tin tu file 
     count = 0;
     rewind(fp);
-    fscanf(fp, "%d", &days);
-    do
+    fscanf(fp, "%d", &days);//Nhan so ngay co may bay
+    do//nhap du lieu vao VAirl 
     {
         if (feof(fp))
             break;
@@ -55,14 +55,14 @@ int main(int argc, char const *argv[])
         count++;
     } while (1);
     fclose(fp);
-    Airl VNAirl[count * days];
+    Airl VNAirl[count * days];// So chuyen bay bang so ngay co chuyen bay va so chuyen bay mot ngay
     for (int i = 0; i < days; i++)
         for (int j = 0; j < count; j++)
         {
             strcpy(VNAirl[i * count + j].frCity, VAirl[j].frCity);
             strcpy(VNAirl[i * count + j].deCity, VAirl[j].deCity);
             VNAirl[i * count + j].seats = VAirl[j].seats;
-        }
+        }//nhap thong tin vao VNAirl
 
     while (true)
     {
@@ -74,12 +74,12 @@ int main(int argc, char const *argv[])
         {
         case 1:
         {
-            makeRes(VAirl, VNAirl, count);
+            makeRes(VAirl, VNAirl, count);//dat ve may bay
             break;
         }
         case 2:
         {
-            display(VAirl, VNAirl, count, days);
+            display(VAirl, VNAirl, count, days);//hien ca ve con
         }
         }
         system("pause");
@@ -126,7 +126,7 @@ void makeRes(Airl VAirl[], Airl VNAirl[], int count)
         if (0 == strcmp(VAirl[i].frCity, CFly) && 0 == strcmp(VAirl[i].deCity, CDes))
         {
             chuyen = i;
-        }
+        }//xem co ton tai chuyen bay do ko
     }
     if (chuyen == -1)
     {
@@ -141,21 +141,21 @@ void makeRes(Airl VAirl[], Airl VNAirl[], int count)
     {
         printf("Error one of the days is invalid\n");
         return;
-    }
+    }//Xem ngay do co bay ko
     printf("How many seats do you want?\n");
     scanf("%d", &mSeats);
     if (mSeats > 400 || mSeats < 3)
     {
         printf("Error the number of seats of a flight is in between 4 and 400\n");
         return;
-    }
+    }//Dieu kien luc dat ve
     else if (mSeats > VNAirl[(dLeave - 1) * count + chuyen].seats || mSeats > VNAirl[(dBack - 1) * count + chuyen].seats)
     {
         printf("Error at least one of the flights being requested does not have the number of seats the user requires.\n");
         return;
-    }
+    }//Co con du ghe cho khach ko
     VNAirl[(dLeave - 1) * count + chuyen].seats -= mSeats;
-    VNAirl[(dBack - 1) * count + chuyen].seats -= mSeats;
+    VNAirl[(dBack - 1) * count + chuyen].seats -= mSeats;//Tru so ghe vua duoc dat
     printf("Thank! Your reservation has been make.\n");
 }
 void display(Airl VAirl[], Airl VNAirl[], int count, int days)
